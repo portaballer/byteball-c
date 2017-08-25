@@ -1,10 +1,14 @@
 
 ## Byteball embedded / IoT
 
+Todo list is in tests/byteball_msgs.c
+
+```
 device contains the app-state and keys
 signature contains the secp256k1 hashing and aes-gcm-128 utility functions
 msgs defines the message requests and handlers
 wss contains a shitty websocket implementation (OK-enough-for-embeded-systems)
+```
 
 # Byteball-IoT is built with / depends on
 
@@ -25,6 +29,11 @@ Some of Byteball messages are too big to parse in one go, other solutions have t
 found, such as adapting/requiring JSON messages to be fit for stream-parsing (ie not
 alloc the size of the message, but handle it in chunks). Or to let a hub speak MessagePack 
 or other smaller data serialization format.
+
+# Try esp-open-rtos
+
+Build system, the Makefile is as dumb as possible, since it should actually
+be a component.mk in esp-open-rtos
 
 ## What for
 
